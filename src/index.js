@@ -72,20 +72,6 @@ refreshButton.addEventListener('click', () => {
   }
 });
 
-async function saveScore(name, score, gameId) {
-  const response = await fetch(`${apiUrl}games/${gameId}/scores`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({
-      user: name,
-      score: score,
-    }),
-  });
-  return response;
-}
-
 async function getScores(gameId) {
   const response = await fetch(`${apiUrl}games/${gameId}/scores`);
   const data = await response.json();
