@@ -233,7 +233,6 @@
     "has-tostringtag": "^1.0.0",
     "has-unicode": "^2.0.1",
     "has-yarn": "^2.1.0",
-    "hint": "^7.1.8",
     "hosted-git-info": "^6.1.1",
     "html-encoding-sniffer": "^3.0.0",
     "html-tags": "^3.3.1",
@@ -639,6 +638,7 @@
   "devDependencies": {
     "css-loader": "^6.7.3",
     "gh-pages": "^5.0.0",
+    "hint": "^7.1.8",
     "html-webpack-plugin": "^5.5.1",
     "sass": "^1.62.1",
     "sass-loader": "^13.2.2",
