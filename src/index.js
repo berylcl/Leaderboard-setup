@@ -39,7 +39,6 @@ clearButton.addEventListener('click', () => {
   scoresData = []; // Clear the scores data
   localStorage.removeItem('scores'); // Remove scores from local storage
 });
-// ADD AN EVENT LISTENER TO THE REFRESH BUTTON
 refreshButton.addEventListener('click', () => {
   scoresList.innerHTML = '';
 
@@ -79,14 +78,9 @@ async function getScores(gameId) {
 }
 
 async function createGame() {
-  // Your code for creating a new game goes here
+  gameId = 'your-game-id';
 
-  // After creating the game and obtaining the gameId
-  gameId = 'your-game-id'; // Replace with the actual gameId
-
-  // Call the refreshButton click event to display the scores after the inputs are filled
   refreshButton.click();
 }
 
-// Call the createGame function to create a new game
 createGame();
