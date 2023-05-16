@@ -51,7 +51,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Here is the link to the live experience](https://shihabrafio.github.io/Leaderboard/).
+- [Here is the link to the live experience](https://berylcl.github.io/Leaderboard-setup/).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
