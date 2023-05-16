@@ -1,0 +1,73 @@
+body {
+  font-family: "Gilroy", sans-serif;
+  background-color: #fff;
+  margin: 0;
+  padding: 0;
+  overflow: scroll;
+  margin-left: 4%;
+}
+
+.scoreboard {
+  display: flex;
+}
+
+.top-1 {
+  display: flex;
+  justify-content: space-between;
+}
+
+ul {
+  border: 2px solid grey;
+  padding-left: 0;
+}
+
+ul li {
+  padding: 0.5rem 0 0.5rem 0.2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  list-style: none;
+}
+
+ul li:nth-child(even) {
+  background: rgb(152, 152, 152);
+  color: white;
+}
+
+ul li:nth-child(odd) {
+  background: transparent;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.add {
+  width: 17%;
+  margin-left: 4%;
+}
+
+.show {
+  width: 20%;
+}
+
+.top-1 button {
+  height: 21px;
+  margin-top: 7%;
+}
+
+.add button {
+  margin-left: 68%;
+}
+
+#name {
+  padding: 1%;
+}
+
+#score {
+  padding: 1%;
+}
+
+.error-message {
+  color: #9f0b0b;
+}
