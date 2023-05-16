@@ -1,11 +1,11 @@
 body {
-    font-family: "Gilroy", sans-serif;
-    background-color: #fff;
-    margin: 0;
-    padding: 0;
-    overflow: scroll;
-    margin-left: 4%;
-  }
+  font-family: "Gilroy", sans-serif;
+  background-color: #fff;
+  margin: 0;
+  padding: 0;
+  overflow: scroll;
+  margin-left: 4%;
+}
 
 .scoreboard {
   display: flex;
@@ -71,4 +71,3 @@ ul li:nth-child(odd) {
 .error-message {
   color: #9f0b0b;
 }
-
