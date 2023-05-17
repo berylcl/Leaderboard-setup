@@ -11,10 +11,9 @@ const clearButton = document.getElementById('clear');
 errorMessage.textContent = 'Please enter a valid number';
 errorMessage.classList.add('error-message');
 
-let gameId = null;
 let scoresData = [];
+let gameId = null;
 
-// ADD AN EVENT LISTENER TO THE SUBMIT BUTTON
 submitButton.addEventListener('click', () => {
   const name = nameInput.value;
   const score = parseFloat(scoreInput.value);
@@ -24,25 +23,24 @@ submitButton.addEventListener('click', () => {
     return;
   }
 
-  // Save the score to local storage
   const scoreObj = { name, score };
   scoresData.push(scoreObj);
-  scoresData.sort((a, b) => b.score - a.score); // Sort scores from highest to lowest
+  scoresData.sort((a, b) => b.score - a.score);
   localStorage.setItem('scores', JSON.stringify(scoresData));
 
-  // Reset the input fields
   nameInput.value = '';
   scoreInput.value = '';
 });
+
 clearButton.addEventListener('click', () => {
   scoresList.innerHTML = '';
-  scoresData = []; // Clear the scores data
-  localStorage.removeItem('scores'); // Remove scores from local storage
+  scoresData = [];
+  localStorage.removeItem('scores');
 });
+
 refreshButton.addEventListener('click', () => {
   scoresList.innerHTML = '';
 
-  // Retrieve scores from local storage
   const storedScores = localStorage.getItem('scores');
   if (storedScores) {
     scoresData = JSON.parse(storedScores);
@@ -51,19 +49,18 @@ refreshButton.addEventListener('click', () => {
       const listItem = document.createElement('li');
       const icon = document.createElement('i');
       icon.classList.add('fas');
-      icon.style.color = '#a41688'; // Set color to gold
+      icon.style.color = '#a41688';
+
       if (index === 0) {
-        // Add trophy icon for the winner
         icon.classList.add('fa-trophy');
       } else if (index === 1) {
-        // Add medal icon for second place
         icon.classList.add('fa-medal');
       } else if (index === 2) {
-        // Add award icon for third place
         icon.classList.add('fa-award');
       } else {
         listItem.textContent = `${index + 1}. `;
       }
+
       listItem.appendChild(icon);
       listItem.innerHTML += `${score.name}: ${score.score}`;
       scoresList.appendChild(listItem);
@@ -71,16 +68,28 @@ refreshButton.addEventListener('click', () => {
   }
 });
 
-async function getScores(gameId) {
-  const response = await fetch(`${apiUrl}games/${gameId}/scores`);
-  const data = await response.json();
-  return data.result;
-}
+const createGame = async () => {
+  const storedGameId = localStorage.getItem('gameId');
+  if (storedGameId) {
+    gameId = storedGameId;
+  } else {
+    try {
+      const response = await fetch(`${apiUrl}games/`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ name: 'My Game' }),
+      });
+      const data = await response.json();
+      gameId = data.result;
+      localStorage.setItem('gameId', gameId);
+      // console.log('Game ID:', gameId);
+    } catch (error) {
+      // console.error('Failed to create a new game:', error);
+      // Add error handling logic here (e.g., show an error message to the user)
+    }
+  }
+};
 
-async function createGame() {
-  gameId = 'your-game-id';
-
-  refreshButton.click();
-}
-
-createGame();
+document.addEventListener('DOMContentLoaded', createGame);
