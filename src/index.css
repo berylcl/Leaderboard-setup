@@ -1,7 +1,6 @@
 body {
   font-family: "Gilroy", sans-serif;
-  background-color: #fff;
-  margin: 0;
+  background-color: #fae0e4;
   padding: 0;
   overflow: scroll;
   margin-left: 4%;
@@ -22,7 +21,7 @@ ul {
 }
 
 ul li {
-  padding: 0.5rem 0 0.5rem 0.2rem;
+  padding: 0.8rem 0 0.5rem 0.2rem;
   font-size: 1rem;
   font-weight: 600;
   list-style: none;
@@ -70,4 +69,28 @@ ul li:nth-child(odd) {
 
 .error-message {
   color: #9f0b0b;
+}
+
+#refresh {
+  background-color: #ff99ac;
+  color: #fff;
+  border-radius: 40px;
+  height: 30px;
+  width: 70px;
+}
+
+#clear {
+  background-color: #ff99ac;
+  color: #fff;
+  border-radius: 40px;
+  height: 30px;
+  width: 70px;
+}
+
+#submit {
+  background-color: #ff99ac;
+  color: #fff;
+  border-radius: 40px;
+  height: 30px;
+  width: 70px;
 }
